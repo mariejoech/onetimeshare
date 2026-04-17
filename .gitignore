@@ -1,2 +1,4 @@
 .env
-onetimeshare-main/onetimeshare-main/database/project.db
+*.db
+*.sqlite
+*.sqlite3

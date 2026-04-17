@@ -1,0 +1,41 @@
+{% extends "./layouts/main1.html" %}
+
+{% block content %}
+
+    <h1 class="mb-4">Submit a Secret</h1>
+
+
+        {% if ErrorMsg %}
+        <div class="alert alert-danger" role="alert">
+            {{ ErrorMsg }}
+        </div>
+        {% endif %}
+
+
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <label for="text" class="form-label">Text:</label>
+            <textarea id="text" name="text" class="form-control" rows="4"  required>{{Text}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="expiration_date" class="form-label">Expiration Date:</label>
+            <input type="datetime-local" id="expiration_date" name="expiration_date" class="form-control" required>
+        </div>
+        <div class="g-recaptcha" data-sitekey="6LcSMDEqAAAAADcvx4-wkUG__-M_qc-_G13kJnfU"></div>
+
+        <button type="submit" class="btn btn-primary">Submit Secret</button>
+
+    </form>
+
+
+{% endblock %}
+
+
+{% block javascript %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+{% endblock %}

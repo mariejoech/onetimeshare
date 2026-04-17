@@ -1,0 +1,21 @@
+{% extends "./layouts/main1.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Secret Submitted Successfully</h1>
+    <p><strong>Your secret message:</strong></p>
+    <div class="secret-message">
+        <p>{{Message}}</p>
+    </div>
+    <p><strong>Access your secret with the following link:</strong></p>
+    <div class="pb-3">
+    <a href="{{ Link}}" class="secret-link ">{{ Link}}</a>
+    </div>
+    <form action="/burn" method="post" class="burn-form">
+        <input type="hidden" name="token" value="{{ Token}}">
+        <button type="submit" class="btn btn-danger">Burn Secret</button>
+    </form>
+</div>
+
+
+{% endblock %}

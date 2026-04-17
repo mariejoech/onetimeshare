@@ -1,0 +1,19 @@
+
+{% extends "./layouts/main1.html" %}
+
+{% block content %}
+<body class="d-flex justify-content-center
+                align-items-center">
+<div class="col-md-12 text-center">
+    <h1>400</h1>
+    <h2>Bad Request</h2>
+    <p>
+       {{ Message }}
+        {{ HostName}}
+    </p>
+    <a  href="http://{{ HostName}}/">Go back Home</a>
+</div>
+</body>
+
+{% endblock %}
+

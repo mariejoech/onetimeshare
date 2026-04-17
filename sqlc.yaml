@@ -1,0 +1,14 @@
+version: "2"
+sql:
+  - engine: "sqlite"
+    queries: "database/queries"
+    schema: "database"
+    gen:
+      go:
+        package: "repository"
+        out: "database/repository"
+        emit_prepared_queries: true
+
+
+    rules:
+      - no-context
